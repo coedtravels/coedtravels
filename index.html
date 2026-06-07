@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coed Travels — Travel Management with AI</title>
+<meta name="description" content="Coed Travels turns the booking confirmations already in your inbox into a complete trip briefing — flights, hotels, visas, arrival forms and more. One-time $24.">
+<style>
+  :root{
+    --navy:#0F1E3C; --navy2:#16294e; --blue:#2D7DD2; --teal:#16A085;
+    --light:#BAE6FD; --gray:#6B7280; --line:#E5E7EB; --bg:#F8FAFC; --ink:#1F2937;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  h2{font-size:30px;color:var(--navy);margin-bottom:10px}
+  .kicker{color:var(--teal);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+  section{padding:72px 0}
+  .btn{display:inline-block;background:var(--teal);color:#fff;font-weight:700;font-size:18px;
+    padding:15px 34px;border-radius:10px;text-decoration:none;transition:transform .12s, box-shadow .12s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(22,160,133,.35)}
+  .btn.small{font-size:15px;padding:10px 22px}
+
+  /* HERO */
+  .hero{background:linear-gradient(170deg,var(--navy) 0%,var(--navy2) 70%,#1b3563 100%);color:#fff;padding:90px 0 84px;position:relative;overflow:hidden}
+  .hero .route{position:absolute;top:46px;left:0;right:0;border-top:2px dashed rgba(186,230,253,.35)}
+  .hero .plane{position:absolute;top:22px;left:50%;transform:translateX(-50%);font-size:34px;color:var(--light)}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .hero h1{font-size:46px;line-height:1.15;margin:14px 0 18px}
+  .hero p.sub{color:#c7d4e8;font-size:19px;margin-bottom:28px}
+  .hero .note{color:#8fa3c2;font-size:13px;margin-top:12px}
+  .mock{background:#fff;border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.4);overflow:hidden;color:var(--ink)}
+  .mock .mhead{background:var(--blue);color:#fff;padding:14px 18px}
+  .mock .mhead b{font-size:17px}
+  .mock .mhead span{display:block;font-size:13px;color:var(--light)}
+  .mrow{display:flex;align-items:center;gap:12px;padding:11px 18px;border-bottom:1px solid var(--line);font-size:14px}
+  .mrow:last-child{border-bottom:none}
+  .badge{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex:none}
+  .mrow small{display:block;color:var(--gray)}
+  .check{margin-left:auto;color:var(--teal);font-weight:700}
+
+  /* HOW IT WORKS */
+  .how{background:var(--bg)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px}
+  .step .num{width:38px;height:38px;border-radius:10px;background:var(--blue);color:#fff;font-weight:700;
+    font-size:18px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .step h3{color:var(--navy);font-size:18px;margin-bottom:8px}
+  .step p{font-size:15px;color:var(--gray)}
+
+  /* FEATURES */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+  .card{border:1px solid var(--line);border-radius:14px;padding:24px;min-height:175px}
+  .card .ico{font-size:26px;margin-bottom:10px}
+  .card h3{color:var(--navy);font-size:17px;margin-bottom:8px}
+  .card p{font-size:14.5px;color:var(--gray)}
+
+  /* PRIVACY */
+  .privacy{background:var(--navy);color:#fff;text-align:center}
+  .privacy h2{color:#fff}
+  .privacy p{max-width:720px;margin:12px auto 0;color:#c7d4e8;font-size:17px}
+
+  /* EDITIONS */
+  .editions{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+  .ed{border:2px solid var(--line);border-radius:14px;padding:28px}
+  .ed.featured{border-color:var(--teal)}
+  .ed h3{color:var(--navy);font-size:20px;margin-bottom:10px}
+  .ed p{font-size:15px;color:var(--gray)}
+  .ed .tag{display:inline-block;background:#EAF6EC;color:#2E7D32;font-size:12px;font-weight:700;
+    padding:3px 10px;border-radius:20px;margin-bottom:12px}
+  .both{ text-align:center;color:var(--gray);margin-top:18px;font-size:15px}
+
+  /* SMARTER */
+  .smarter{background:var(--bg)}
+  .smarter p{max-width:780px;font-size:16.5px;color:var(--ink);margin-top:12px}
+
+  /* FAQ */
+  details{border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-top:12px}
+  details summary{font-weight:700;color:var(--navy);cursor:pointer;font-size:16px}
+  details p{margin-top:10px;color:var(--gray);font-size:15px}
+
+  /* CTA + FOOTER */
+  .cta{background:linear-gradient(170deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;text-align:center}
+  .cta h2{color:#fff;margin-bottom:20px}
+  .cta .under{color:#8fa3c2;font-size:14px;margin-top:14px}
+  footer{background:#0b1730;color:#8fa3c2;text-align:center;padding:28px 0;font-size:14px}
+  footer a{color:#c7d4e8;text-decoration:none}
+
+  @media(max-width:860px){
+    .hero .wrap{grid-template-columns:1fr}
+    .hero h1{font-size:34px}
+    .steps,.grid{grid-template-columns:1fr}
+    .editions{grid-template-columns:1fr}
+    section{padding:52px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="route"></div><div class="plane">✈</div>
+  <div class="wrap">
+    <div>
+      <span class="kicker">Coed Travels</span>
+      <h1>Your trips, already in your inbox.</h1>
+      <p class="sub">AI-powered travel management that turns the booking confirmations you already have into a complete trip briefing — every flight, hotel, tour, visa rule and arrival form on one beautiful page.</p>
+      <a class="btn" href="https://coedtravels.gumroad.com/l/coedtravels">Get Coed Travels — $24</a>
+      <div class="note">One-time purchase · Both editions included · Requires Claude AI (free account works for the browser edition)</div>
+    </div>
+    <div class="mock">
+      <div class="mhead"><b>Malaysia — Mar 12–21</b><span>23 bookings found</span></div>
+      <div class="mrow"><div class="badge" style="background:var(--blue)">✈</div><div><b>Delta · SEA → KUL</b><small>Conf GANA9Z · Seat 24A</small></div><div class="check">✓</div></div>
+      <div class="mrow"><div class="badge" style="background:var(--blue)">✈</div><div><b>AirAsia · KUL → LGK</b><small>Conf XK93PQ</small></div><div class="check">✓</div></div>
+      <div class="mrow"><div class="badge" style="background:var(--teal)">⌂</div><div><b>Hilton Kuala Lumpur</b><small>4 nights · Conf 88231904</small></div><div class="check">✓</div></div>
+      <div class="mrow"><div class="badge" style="background:#E07A5F">★</div><div><b>Batu Caves Tour · Klook</b><small>Voucher · Mar 14, 9:00 AM</small></div><div class="check">✓</div></div>
+      <div class="mrow"><div class="badge" style="background:var(--teal)">⌂</div><div><b>The Datai Langkawi</b><small>3 nights · Conf LGK-5521</small></div><div class="check">✓</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="wrap">
+    <span class="kicker">How it works</span>
+    <h2>Three steps to your briefing</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Tell it your trip</h3><p>Name, countries, dates. That's all it needs.</p></div>
+      <div class="step"><div class="num">2</div><h3>It sweeps your email</h3><p>AI finds flights, hotels, tours, buses and transfers across Gmail &amp; Outlook — even ones filed away under labels. Works for trips you took years ago, too.</p></div>
+      <div class="step"><div class="num">3</div><h3>Get your briefing</h3><p>One page with every confirmation number, visa rules for YOUR passport, arrival-form deadlines, weather, packing tips and a copy-paste pocket itinerary.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="wrap">
+    <span class="kicker">Features</span>
+    <h2>Everything about your trip, organized</h2>
+    <div class="grid">
+      <div class="card"><div class="ico">✈️</div><h3>Every leg, every confirmation</h3><p>Multi-stop flights shown one row per leg with times and seats.</p></div>
+      <div class="card"><div class="ico">🛂</div><h3>Visas &amp; arrival forms</h3><p>Rules matched to each traveler's actual passport, with official links and deadlines.</p></div>
+      <div class="card"><div class="ico">📋</div><h3>Pocket Itinerary</h3><p>A copy-paste day-by-day timeline for sharing with family.</p></div>
+      <div class="card"><div class="ico">🚕</div><h3>Rides ledger</h3><p>Grab and Uber receipts collected automatically so you see real trip costs.</p></div>
+      <div class="card"><div class="ico">📎</div><h3>Drop in anything</h3><p>Paste a confirmation or drop a PDF or screenshot; it lands in the right section.</p></div>
+      <div class="card"><div class="ico">🕰️</div><h3>Rebuild past trips</h3><p>Point it at old dates and reconstruct trips you took years ago, complete with confirmations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section class="privacy">
+  <div class="wrap">
+    <span class="kicker">Privacy</span>
+    <h2>Your data never leaves your computer.</h2>
+    <p>Everything lives in your browser's local storage. No servers, no accounts, no tracking. The email sweep runs through your own Claude account on your own machine. We couldn't see your trips if we wanted to.</p>
+  </div>
+</section>
+
+<!-- EDITIONS -->
+<section id="editions">
+  <div class="wrap">
+    <span class="kicker">Two editions</span>
+    <h2>Pick your power level</h2>
+    <div class="editions">
+      <div class="ed featured"><span class="tag">FULL POWER</span><h3>Claude App Edition</h3><p>Automatic email sweeps, PDF &amp; screenshot reading, one-click trip briefings. Requires a paid Claude plan (Pro/Max/Team/Enterprise).</p></div>
+      <div class="ed"><span class="tag">UNIVERSAL</span><h3>Browser Edition</h3><p>Works in any browser; email features run through free claude.ai. Nothing to install.</p></div>
+    </div>
+    <p class="both">Both editions included with every purchase — plus an illustrated setup guide.</p>
+  </div>
+</section>
+
+<!-- SMARTER -->
+<section class="smarter">
+  <div class="wrap">
+    <span class="kicker">Always improving</span>
+    <h2>Gets smarter every week</h2>
+    <p>Booking-detection lists update automatically from our public GitHub repository — when any traveler discovers a new airline or hotel sender, everyone's sweep improves. And as travel companies launch Claude connectors (Booking.com, Expedia, Kiwi, Viator, Turkish Airlines and more), future releases will sweep those services directly — beyond email.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <span class="kicker">FAQ</span>
+    <h2>Questions, answered</h2>
+    <details><summary>Does it read my email?</summary><p>Only when you ask it to sweep, only for booking confirmations, only on your machine through your own Claude account. Nothing is uploaded to us.</p></details>
+    <details><summary>Do I need Claude AI?</summary><p>Yes — Coed Travels runs on Claude (by Anthropic). The browser edition works with a free claude.ai account; the Claude app edition needs a paid plan with Cowork.</p></details>
+    <details><summary>Which airlines and hotels does it recognize?</summary><p>70+ verified senders at launch — every major US carrier, Asian low-cost carriers, Agoda, Booking.com, Klook, Viator, and bank travel portals — growing weekly.</p></details>
+    <details><summary>Can it rebuild past trips?</summary><p>Yes — set the dates and it searches the year before the trip, so you can reconstruct trips you took years ago.</p></details>
+    <details><summary>Refunds?</summary><p>All sales are final (instant digital delivery). But if something doesn't work as described, email us — we'll get you running.</p></details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Stop building spreadsheets for your trips.</h2>
+    <a class="btn" href="https://coedtravels.gumroad.com/l/coedtravels">Get Coed Travels — $24</a>
+    <div class="under">One-time purchase · Both editions included · Illustrated setup guide</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Coed Travels · <a href="mailto:coedtravels@gmail.com">coedtravels@gmail.com</a> · <a href="https://coedtravels.gumroad.com/l/coedtravels">Buy on Gumroad</a><br>
+    Travel management with AI.
+  </div>
+</footer>
+
+<script src="https://gumroad.com/js/gumroad.js"></script>
+</body>
+</html>
