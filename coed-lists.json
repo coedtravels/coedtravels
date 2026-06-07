@@ -1,10 +1,9 @@
 {
   "schema": "coed-lists",
-  "version": 2,
+  "version": 3,
   "updated": "2026-06-06",
   "comment": "Master search-intelligence list for Coed-Travels email sweeps. Harvested from real inboxes (Joseph Gmail, work Outlook, Ella signup inbox). Data-only: senders are matched as substrings of the From address; subject rules are regex sources. Merge OVER baked-in defaults, never replace. No URLs, no code.",
   "bookingSenders": [
-    "support@tripit.com",
     "alerts.biltrewards.com",
     "b.12go.asia",
     "noreply.itinerary@vietjetair.com",
@@ -99,7 +98,6 @@
     "hilton.com",
     "marriott.com",
     "ihg.com",
-    "tripit.com",
     "biltrewards.com",
     "kiwi.com",
     "worldspan.com",
@@ -156,9 +154,9 @@
   "subjectBoost3b": "tickets (for|are)|your activity|your tour|voucher",
   "subjectBoost2": "how was your stay|tell us about your stay|your recent stay|check-?out",
   "subjectPenalty4": "statement|snapshot|miles\\b|points\\b|status\\b|deal|sale\\b|offer|earn\\b|survey|news",
-  "junkSubjects": "a taste of|starter itinerary awaits|your next (trip|adventure)|dream vacation|flash sale|today only|extra flight added|% off|price drop|\\bdeals?\\b|\\bsale\\b|bonus|limited time|last chance|weekly travel news|coupons?|just landed|selected for you|cash back",
+  "junkSubjects": "a taste of|starter itinerary awaits|your next (trip|adventure)|dream vacation|flash sale|today only|extra flight added|% off|price drop|\\bdeals?\\b|\\bsale\\b|bonus|limited time|last chance|weekly travel news|coupons?|just landed|selected for you|cash back|check out your tripit itinerary",
   "notes": {
-    "tripit": "TripIt emails mirror full booking confirmations the user forwarded — extremely high recall source.",
+    "tripit": "DEMOTED v3: TripIt emails are notification STUBS ('check out your itinerary' + link), not mirrored content — they wasted 5 extraction passes. Junk-subject filtered.",
     "delta": "t.delta.com = transactional, o.delta.com = marketing. Booking receipts, check-in, trip-details all from t.delta.com.",
     "bilt": "alerts.biltrewards.com = hotel booking confirmations; members.biltrewards.com = marketing.",
     "agoda": "no-reply@agoda.com = confirmations; reply.agoda-emails.com check-in-day emails repeat the confirmation ID; sg.newsletter.* = junk.",
