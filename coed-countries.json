@@ -1,0 +1,229 @@
+{
+  "schema": "coed-countries",
+  "version": 1,
+  "updated": "2026-06-11",
+  "comment": "Curated entry/arrival-form reference for Coed-Travels. The sweep prompt feeds the matching countries' data to the AI as GROUND TRUTH so it does not have to web-search (and get wrong) the arrival-form URL/deadline. The AI computes the trip-specific triggerDate itself. Hosted like coed-lists.json; merge/update on GitHub, no app reinstall. arrivalForm=null means the country has no digital pre-arrival card.",
+  "disclaimer": "Entry rules, visas, and arrival forms change. This is guidance, not legal advice — always verify on the official government site before travel. Visa rules below assume common Western passports (US/UK/EU/CA/AU) unless noted; other nationalities vary.",
+  "countries": {
+    "Thailand": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": { "name": "Thailand Digital Arrival Card (TDAC)", "url": "https://tdac.immigration.go.th", "deadlineDays": 3, "deadlineNote": "Submit online within 72 hours (3 days) before arrival. Free. Required for all foreign nationals arriving by air, land, or sea.", "summary": "Mandatory online arrival card; generates a QR code shown at immigration." },
+      "visaNote": "Visa-free 60 days for US/UK/EU/AU/CA passports (extendable). e-Visa or embassy visa for nationalities not on the exemption list."
+    },
+    "Vietnam": {
+      "passportValidity": "6 months beyond entry with blank pages",
+      "arrivalForm": { "name": "Vietnam Digital Pre-Arrival Declaration", "url": "https://prearrival.immigration.gov.vn", "deadlineDays": 3, "deadlineNote": "Recommended before departure; submit up to a few days prior. Mandatory at major airports (e.g. SGN/Tan Son Nhat) since 15 Apr 2026. Separate from the e-Visa.", "summary": "Online pre-arrival declaration generating a QR code; does NOT replace the visa." },
+      "visaNote": "Most passports need an e-Visa (apply at evisa.gov.vn, ~$25 single / $50 multiple, 3+ business days). Consider multiple-entry if exiting and re-entering. Some ASEAN nationals (e.g. Philippines) are visa-free up to 21-30 days."
+    },
+    "Cambodia": {
+      "passportValidity": "6 months beyond entry with one blank page",
+      "arrivalForm": { "name": "Cambodia e-Arrival Card (CeA)", "url": "https://www.arrival.gov.kh", "deadlineDays": 7, "deadlineNote": "For AIR arrivals only: submit within 7 days before arrival. LAND/border crossings still use a paper form at the checkpoint — the digital CeA is not required there.", "summary": "Unified digital arrival/customs/health card for air arrivals; QR code at immigration." },
+      "visaNote": "Most passports need a tourist visa: e-Visa at evisa.gov.kh (~$36) or visa on arrival. ASEAN nationals (e.g. Philippines) visa-exempt up to 30 days."
+    },
+    "Malaysia": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": { "name": "Malaysia Digital Arrival Card (MDAC)", "url": "https://imigresen-online.imi.gov.my/mdac/main", "deadlineDays": 3, "deadlineNote": "Submit online within 3 days before arrival. Free. Exemptions include Singapore nationals and some others.", "summary": "Mandatory online arrival card for most foreign visitors." },
+      "visaNote": "Visa-free up to 90 days for US/UK/EU/AU/CA and many; up to 30 days for several others. eNTRI/eVisa for nationalities that require it."
+    },
+    "Singapore": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": { "name": "SG Arrival Card (SGAC)", "url": "https://eservices.ica.gov.sg/sgarrivalcard", "deadlineDays": 3, "deadlineNote": "Submit within 3 days before arrival (including arrival day). Free. Includes an electronic health declaration.", "summary": "Mandatory electronic arrival card for all foreign visitors." },
+      "visaNote": "Visa-free 30-90 days for most Western passports. e-Visa for nationalities that require one."
+    },
+    "Indonesia": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": { "name": "Customs Declaration (e-CD / All Indonesia)", "url": "https://ecd.beacukai.go.id", "deadlineDays": 3, "deadlineNote": "Electronic customs declaration within 3 days before arrival; QR shown at customs. (Health forms generally no longer required.)", "summary": "Digital customs declaration; many travelers also use the 'All Indonesia' app." },
+      "visaNote": "Most passports need Visa on Arrival or e-VOA (apply at molina.imigrasi.go.id, ~$35, 30 days, extendable once). Some ASEAN nationals visa-free."
+    },
+    "Philippines": {
+      "passportValidity": "6 months beyond intended stay",
+      "arrivalForm": { "name": "eTravel (Philippine Travel Registration)", "url": "https://etravel.gov.ph", "deadlineDays": 3, "deadlineNote": "Register within 72 hours before EACH flight — both departure and arrival. Free — ignore paid look-alike sites.", "summary": "Free mandatory registration generating a QR code for departing and arriving passengers." },
+      "visaNote": "Visa-free up to 30 days for US/UK/EU/AU/CA and many. Filipino citizens enter their own country freely."
+    },
+    "Laos": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "Most passports: e-Visa at immigration.gov.la or visa on arrival (~$30-45). Some ASEAN nationals visa-free."
+    },
+    "Myanmar": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "e-Visa required for most passports (evisa.moip.gov.mm). Check current travel advisories."
+    },
+    "Japan": {
+      "passportValidity": "Valid for duration of stay (6 months recommended)",
+      "arrivalForm": { "name": "Visit Japan Web", "url": "https://www.vjw.digital.go.jp", "deadlineDays": 1, "deadlineNote": "Register up to ~2 weeks ahead; generate your QR code at least 6 hours before landing. Optional but speeds up immigration + customs.", "summary": "Online immigration + customs declaration producing QR codes for fast-track kiosk lanes. Not a visa." },
+      "visaNote": "Visa-free short stay up to 90 days for US/UK/EU/AU/CA. Visa required for nationalities not on the exemption list (e.g. Philippines)."
+    },
+    "South Korea": {
+      "passportValidity": "Valid for duration of stay",
+      "arrivalForm": { "name": "K-ETA (Korea Electronic Travel Authorization)", "url": "https://www.k-eta.go.kr", "deadlineDays": 3, "deadlineNote": "Apply at least 72 hours before departure (~$8) IF required. 22 countries incl. US/UK/JP/AU/CA are K-ETA-EXEMPT through 31 Dec 2026 — they may skip it, but holding a K-ETA waives the paper arrival card.", "summary": "Pre-travel authorization; currently waived for many nationalities through end of 2026." },
+      "visaNote": "Visa-free 90 days for US/UK/EU/AU/CA. K-ETA exemption for 22 countries extended to Dec 2026. Others need K-ETA or a visa."
+    },
+    "China": {
+      "passportValidity": "6 months beyond entry with blank pages",
+      "arrivalForm": null,
+      "visaNote": "Most Western passports need a visa in advance. Visa-free transit (up to 240 hours/10 days) available at many ports for eligible nationalities; some short visa-free stays apply — verify current policy at the nearest embassy."
+    },
+    "Hong Kong": {
+      "passportValidity": "1-6 months beyond stay depending on nationality",
+      "arrivalForm": null,
+      "visaNote": "Visa-free 90 days (US/UK/EU/AU/CA) or 180 days (UK). Entry is fully electronic — no paper arrival card."
+    },
+    "Taiwan": {
+      "passportValidity": "Valid for duration of stay (6 months recommended)",
+      "arrivalForm": { "name": "Taiwan Arrival Card (online)", "url": "https://oa1.immigration.gov.tw", "deadlineDays": 3, "deadlineNote": "Optional online arrival card you can submit before arrival to skip the paper form. Free.", "summary": "Optional electronic arrival card." },
+      "visaNote": "Visa-free 90 days for US/UK/EU/AU/CA. e-Visa or visa for others."
+    },
+    "India": {
+      "passportValidity": "6 months beyond entry with 2 blank pages",
+      "arrivalForm": null,
+      "visaNote": "Most passports need an e-Visa in advance: apply at indianvisaonline.gov.in at least 4 days before arrival. Use the official site only."
+    },
+    "Sri Lanka": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "Electronic Travel Authorization (ETA) required for most: official site eta.gov.lk. Apply before travel."
+    },
+    "Nepal": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "Visa on arrival for most passports (fill the online form at nepaliport.immigration.gov.np beforehand to speed it up); fees by duration (15/30/90 days)."
+    },
+    "Australia": {
+      "passportValidity": "Valid for duration of stay",
+      "arrivalForm": null,
+      "visaNote": "ALL visitors need a visa/authorization in advance. US/UK/EU: ETA (subclass 601) via the official 'Australian ETA' app (~AUD 20 service fee). Many others: eVisitor (free) or a visitor visa. There is also a paper Incoming Passenger Card given on the plane."
+    },
+    "New Zealand": {
+      "passportValidity": "3 months beyond departure",
+      "arrivalForm": { "name": "NZeTA + New Zealand Traveller Declaration (NZTD)", "url": "https://www.immigration.govt.nz", "deadlineDays": 1, "deadlineNote": "Request the NZeTA before travel (can take up to 72h; ~NZD 17 + IVL levy). Complete the NZ Traveller Declaration within 24 hours before departure.", "summary": "NZeTA = pre-travel authorization; NZTD = digital arrival/customs/biosecurity declaration." },
+      "visaNote": "Visa-waiver countries (US/UK/EU/CA) need an NZeTA, not a visa, for stays up to 90 days. Others need a visitor visa."
+    },
+    "United States": {
+      "passportValidity": "Valid for duration of stay (6 months recommended; some countries exempt)",
+      "arrivalForm": { "name": "ESTA (Visa Waiver Program)", "url": "https://esta.cbp.dhs.gov", "deadlineDays": 3, "deadlineNote": "VWP travelers apply for ESTA at least 72 hours before travel (~$21, valid 2 years). Not an arrival card — there is no paper arrival form for air arrivals.", "summary": "Pre-travel authorization for the 40+ Visa Waiver Program countries." },
+      "visaNote": "VWP countries (UK/EU/AU/JP/KR and more): ESTA, up to 90 days. Most other nationalities need a B-1/B-2 visa obtained in advance."
+    },
+    "Canada": {
+      "passportValidity": "Valid for duration of stay",
+      "arrivalForm": null,
+      "visaNote": "Visa-exempt air travelers (UK/EU/AU/JP and more) need an eTA before boarding (apply at canada.ca, ~CAD 7, minutes to approve). US citizens need neither visa nor eTA. Many other nationalities need a visitor visa. (US-citizen land arrivals: no eTA.)"
+    },
+    "Mexico": {
+      "passportValidity": "Valid for duration of stay",
+      "arrivalForm": { "name": "FMM / Multiple Migratory Form", "url": "https://www.inm.gob.mx", "deadlineDays": 0, "deadlineNote": "For air arrivals the tourist entry is usually handled at immigration / via the airline; a digital FMM applies at some land borders. Keep the stamped entry permit until departure.", "summary": "Tourist entry permit (FMM); process varies by port." },
+      "visaNote": "Visa-free up to 180 days for US/UK/EU/CA/AU and many. Others may need a visa unless they hold a valid US/Canada/Schengen/UK/Japan visa."
+    },
+    "Brazil": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "US, Canadian and Australian citizens need an e-Visa (reintroduced 2025) via the official VFS/government portal before travel. UK/EU visa-free up to 90 days."
+    },
+    "Costa Rica": {
+      "passportValidity": "1 day beyond stay for many (6 months recommended)",
+      "arrivalForm": { "name": "Digital Migration Form", "url": "https://digitalizacion.migracion.go.cr", "deadlineDays": 3, "deadlineNote": "Complete the online migration form within 72 hours before arrival and departure. Free.", "summary": "Digital entry/exit form generating a QR code." },
+      "visaNote": "Visa-free up to 90 days for US/UK/EU/CA/AU. Onward/return ticket often required."
+    },
+    "Argentina": {
+      "passportValidity": "Valid for duration of stay",
+      "arrivalForm": null,
+      "visaNote": "Visa-free up to 90 days for US/UK/EU/CA/AU."
+    },
+    "United Kingdom": {
+      "passportValidity": "Valid for duration of stay",
+      "arrivalForm": { "name": "UK ETA (Electronic Travel Authorisation)", "url": "https://www.gov.uk/eta", "deadlineDays": 3, "deadlineNote": "Required since 25 Feb 2026 for ALL visa-exempt visitors (US/EU/AU/CA and 85+ nationalities), including children. Apply via the 'UK ETA' app (~£20, usually approved in minutes, valid 2 years). British/Irish citizens exempt.", "summary": "Pre-travel digital permission; carriers verify it before boarding." },
+      "visaNote": "Visa-exempt visitors need an ETA (not a visa) for stays up to 6 months. Visa nationals need a Standard Visitor visa."
+    },
+    "France": {
+      "passportValidity": "3 months beyond departure from Schengen",
+      "arrivalForm": null,
+      "visaNote": "Schengen: visa-free 90 days in any 180 for US/UK/EU/CA/AU/JP. ETIAS authorization launches late 2026 and becomes mandatory in 2027 — NOT yet required for 2026 trips. The biometric Entry/Exit System (EES) is rolling out at borders."
+    },
+    "Italy": {
+      "passportValidity": "3 months beyond departure from Schengen",
+      "arrivalForm": null,
+      "visaNote": "Schengen: visa-free 90/180 days for US/UK/EU/CA/AU/JP. ETIAS not required in 2026 (mandatory ~2027). EES biometric checks rolling out."
+    },
+    "Spain": {
+      "passportValidity": "3 months beyond departure from Schengen",
+      "arrivalForm": null,
+      "visaNote": "Schengen: visa-free 90/180 days for US/UK/EU/CA/AU/JP. ETIAS not required in 2026 (mandatory ~2027). EES biometric checks rolling out."
+    },
+    "Germany": {
+      "passportValidity": "3 months beyond departure from Schengen",
+      "arrivalForm": null,
+      "visaNote": "Schengen: visa-free 90/180 days for US/UK/EU/CA/AU/JP. ETIAS not required in 2026 (mandatory ~2027). EES biometric checks rolling out."
+    },
+    "Greece": {
+      "passportValidity": "3 months beyond departure from Schengen",
+      "arrivalForm": null,
+      "visaNote": "Schengen: visa-free 90/180 days for US/UK/EU/CA/AU/JP. ETIAS not required in 2026 (mandatory ~2027). EES biometric checks rolling out."
+    },
+    "Netherlands": {
+      "passportValidity": "3 months beyond departure from Schengen",
+      "arrivalForm": null,
+      "visaNote": "Schengen: visa-free 90/180 days for US/UK/EU/CA/AU/JP. ETIAS not required in 2026 (mandatory ~2027). EES biometric checks rolling out."
+    },
+    "Portugal": {
+      "passportValidity": "3 months beyond departure from Schengen",
+      "arrivalForm": null,
+      "visaNote": "Schengen: visa-free 90/180 days for US/UK/EU/CA/AU/JP. ETIAS not required in 2026 (mandatory ~2027). EES biometric checks rolling out."
+    },
+    "Switzerland": {
+      "passportValidity": "3 months beyond departure from Schengen",
+      "arrivalForm": null,
+      "visaNote": "Schengen member: visa-free 90/180 days for US/UK/EU/CA/AU/JP. ETIAS not required in 2026 (mandatory ~2027)."
+    },
+    "United Arab Emirates": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "Visa on arrival for US/UK/EU/AU/CA (30-90 days depending on nationality). Many others need an e-Visa arranged via airline or sponsor. No paper arrival card."
+    },
+    "Turkey": {
+      "passportValidity": "6 months beyond entry / 150 days recommended",
+      "arrivalForm": null,
+      "visaNote": "Visa-free up to 90 days for US/UK/EU/CA. Some nationalities need an e-Visa from the official site evisa.gov.tr (use official site only)."
+    },
+    "Saudi Arabia": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "Tourist e-Visa for US/UK/EU/AU/CA and ~60 countries at visa.visitsaudi.com (or visa on arrival). One-year multiple-entry, 90-day stays."
+    },
+    "Qatar": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "Visa-free entry (visa waiver on arrival) for US/UK/EU/CA/AU and ~95 nationalities, 30-90 days. Hayya platform used for some events/stays."
+    },
+    "Jordan": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "Visa on arrival for most Western passports, or e-Visa. The Jordan Pass (jordanpass.jo) waives the visa fee and includes Petra — buy before arrival."
+    },
+    "Egypt": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "Visa required: e-Visa at visa2egypt.gov.eg (~$25) or visa on arrival for many Western passports. Use the official site only."
+    },
+    "Morocco": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "Visa-free up to 90 days for US/UK/EU/CA/AU. A paper arrival/embarkation card is completed on entry."
+    },
+    "South Africa": {
+      "passportValidity": "30 days beyond departure with 2 blank pages",
+      "arrivalForm": null,
+      "visaNote": "Visa-free up to 90 days for US/UK/EU/CA/AU. Others may need a visa or the new ETA (rolling out)."
+    },
+    "Kenya": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": { "name": "Kenya Electronic Travel Authorisation (eTA)", "url": "https://www.etakenya.go.ke", "deadlineDays": 3, "deadlineNote": "Required for ALL visitors (replaced visas in 2024), including previously visa-free nationals. Apply at least 3 days before travel (~$30+). Use the official site only.", "summary": "Mandatory pre-travel authorization for everyone entering Kenya." },
+      "visaNote": "Everyone needs an eTA — there is no longer a visa-free category for tourists."
+    },
+    "Tanzania": {
+      "passportValidity": "6 months beyond entry",
+      "arrivalForm": null,
+      "visaNote": "e-Visa at visa.immigration.go.tz or visa on arrival for most (~$50; US citizens ~$100 multiple-entry). Apply via the official site."
+    }
+  }
+}
